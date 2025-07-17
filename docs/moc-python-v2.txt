@@ -1,0 +1,29 @@
+🧩 Proposta V2 — Extensão para compliance
+Um novo subpacote como:
+
+moc/
+├── compliance/
+│   ├── __init__.py
+│   ├── lgpd.py
+│   ├── usabilidade.py
+│   ├── acessibilidade.py
+│   └── relatorio_compliance.py
+🔍 Exemplos de verificação
+Tipo	O que validar
+🛡️ LGPD	Presença de dados sensíveis em código, logs, configs
+🧠 Usabilidade	Uso de boas práticas de nome, modularidade, padrão UI
+👁️ Acessibilidade	Labels em campos, contraste visual (se front-end), feedback tátil
+🔒 Segurança técnica	Configs expostos, arquivos inseguros, dependências obsoletas
+🛠️ Integração com o MOC atual
+Rodar verificar_certidao() pode também invocar compliance.relatorio_compliance()
+
+Pode gerar um novo arquivo em docs/relatorio_compliance.md com o resultado
+
+Pode permitir incluir padrões de compliance personalizados via YAML
+
+📘 Sugestão de documentação no README futuro
+O MOC v2 permite não apenas a gestão técnica de mudanças como também auditoria de conformidade em projetos Python. Os módulos de compliance oferecem verificações automatizadas para LGPD, usabilidade, acessibilidade e segurança mínima — permitindo que cada projeto mantenha seus critérios técnicos e legais sob controle contínuo.
+
+Se quiser, posso já estruturar o pacote moc/compliance com os arquivos e esboços iniciais. Inclusive, posso criar um verificador LGPD simulando a busca por nomes como "cpf", "senha", "email" em variáveis, campos ou arquivos de configuração.
+
+Bora deixar o moc-python pronto pra virar benchmark de maturidade e conformidade de engenharia? 📦🛡️🧪

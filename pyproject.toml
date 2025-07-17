@@ -1,0 +1,48 @@
+# ╭──────────────────────────────────────────────────────────────╮
+# │                                                              │
+# │           moc-python — Manifesto Técnico do Projeto          │
+# │                                                              │
+# │   Este arquivo define as dependências, metadados e regras    │
+# │   de construção do pacote moc-python, uma ferramenta de      │
+# │   gestão técnica de mudanças para projetos Python.           │
+# │                                                              │
+# │   Gerado e mantido por: MOACYR + Copilot                     │
+# │   Versão inicial: 0.1.0 • Data: 2025-07-17                   │
+# │                                                              │
+# ╰──────────────────────────────────────────────────────────────╯
+
+[tool.poetry]
+name = "moc-python"                             # 📦 Nome oficial do pacote
+version = "0.1.0"                                # 🔢 Versão inicial (semver: MAJOR.MINOR.PATCH)
+description = "Ferramenta de gestão técnica de mudanças para projetos Python"
+authors = ["MOACYR <moacyr@example.com>"]
+license = "MIT"                                  # 📄 Licença de uso aberta
+readme = "README.md"                             # 📘 Documentação principal exibida no PyPI
+packages = [{ include = "moc" }]                 # 📦 Pacote raiz incluído no projeto
+
+[tool.poetry.dependencies]
+python = "^3.9"                                   # 🐍 Versão mínima suportada do Python
+pipreqs = "^0.4.13"                               # 🔍 Gera requirements baseado em imports reais
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"                                 # 🧪 Testes automatizados
+pytest-cov = "^4.1.0"                             # 📊 Cobertura de testes
+flake8 = "^6.0.0"                                 # 🚨 Análise estática de estilo e erros leves
+mypy = "^1.8.0"                                   # 🧠 Verificação de tipos estáticos (type hints)
+pre-commit = "^3.5.0"                             # 📋 Hooks automáticos antes de commits
+
+[tool.flake8]
+max-line-length = 120                             # 📏 Permite linhas maiores que o padrão (pep8 = 79)
+exclude = ["venv", "__pycache__", "docs", "examples"]
+
+[tool.mypy]
+strict = true                                     # 🔒 Regras mais rigorosas de tipo
+ignore_missing_imports = true                     # 🙈 Evita warnings em pacotes externos
+
+[tool.pytest.ini_options]
+addopts = "-ra -q"                                # ⚙️ Saída de teste concisa e resumida
+testpaths = ["tests"]                             # 📁 Diretório padrão dos testes
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"         # 🏗️ Backend oficial do Poetry
